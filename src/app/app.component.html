@@ -1,7 +1,9 @@
 <div class="content">
-    <input type="text" [(ngModel)]="textValue" placeholder="Link tin tuyển dụng" /><br/>
-    <qr-code [value]="textValue" [size]="200" level="H" canvas="true" #qrCode></qr-code><br/>
-    <button (click)="createQRWithImage()" [disabled]="imgURL == '' || textValue == ''">Generate QR & Downlaod</button>
+    <input type="text" [(ngModel)]="textValue" placeholder="Link tin tuyển dụng"  (keyup)="createQRWithImage()"/><br/>
+    <qr-code [value]="textValue" [size]="200" level="H" canvas="true" #qrCode  level="H" version="40"></qr-code><br/>
+    <button (click)="saveQRCode()" [disabled]="imgURL == '' || textValue == ''">Tải QR Code</button>
+
+    
   </div>
 
 
